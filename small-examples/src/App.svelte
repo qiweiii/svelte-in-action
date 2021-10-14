@@ -15,6 +15,11 @@ const handleSelect = event => selected = event.detail;
 // (chap4: block structures)
 import Dogs from "./Dogs.svelte";
 import Employee from "./Employee.svelte";
+
+
+// (chap5: component communication)
+import StopLight from './StopLight.svelte';
+let go = false;
 </script>
 
 <main>
@@ -33,9 +38,15 @@ import Employee from "./Employee.svelte";
 	<Dogs />
 	<hr />
 
-	<h1>Employee breeds: for each example</h1>
+	<h1>Employee: for each example</h1>
 	<Employee />
 	<hr />
+
+	<h1>StopLight: props example</h1>
+	<StopLight />
+	<StopLight on />
+	<StopLight on={go} />
+	<button on:click={() => go = !go}>Toggle</button>
 
 </main>
 
@@ -46,6 +57,16 @@ import Employee from "./Employee.svelte";
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	hr {
+		border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+		width: 100%;
 	}
 
 	@media (min-width: 640px) {

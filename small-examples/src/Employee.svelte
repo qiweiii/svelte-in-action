@@ -21,7 +21,7 @@
   <table>
     <caption>Employees</caption>
     <tr><th>Name</th><th>Age</th></tr>
-    {#each employees as employee}
+    {#each employees.slice(10) as employee}
       <tr>
         <td>{employee.employee_name}</td>
         <td>{employee.employee_age}</td>
