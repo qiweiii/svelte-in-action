@@ -15,6 +15,13 @@
   // color pick
   import ColorPicker from "./ColorPicker.svelte";
   let hex = "000000";
+  // shipping label: slots
+  import ShippingLabel from "./ShippingLabel.svelte";
+  // buttons: basic events
+  import Buttons from "./Buttons.svelte";
+  let colors = ["Red", "Green", "Blue"];
+  let color = "";
+  const handleSelect = (event) => (color = event.detail);
 </script>
 
 <div class="chap">
@@ -51,6 +58,29 @@
       {hex}
     </div>
     <input type="color" bind:value={hex} />
+  </div>
+
+  <div class="example">
+    <h2>ShippingLabel: <code>Slots</code></h2>
+    <ShippingLabel>
+      <div slot="address">
+        123 Some Street,<br />
+        Somewhere, Some State 12345
+      </div>
+      <div slot="name">Mark Volkmann</div>
+    </ShippingLabel>
+    <p>
+      Note: The slot element was added to HTML to support Web Components. Slots
+      are not unique to Svelte.
+    </p>
+  </div>
+
+  <div class="example">
+    <h2>Button: <code>basic events</code></h2>
+    <Buttons labels={colors} value={color} on:select={handleSelect} />
+    {#if color}
+      <div>You clicked {color}.</div>
+    {/if}
   </div>
 </div>
 

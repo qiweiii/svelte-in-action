@@ -91,12 +91,16 @@ hr {
 	width: 100%;
 }
 
+p {
+	background-color: yellow;
+}
+
 .chap {
-	
+	background-color: white;
 }
 
 .example {
-	padding: 40px 0 40px 30px;
+	padding: 40px 40px 40px 30px;
 	margin-bottom: 5px;
 	border: #333 1px solid;
 }
