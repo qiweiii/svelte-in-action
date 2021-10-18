@@ -11,14 +11,19 @@
   const handleSelect = (event) => (selected = event.detail);
 </script>
 
-<h1>chap3: svelte basics</h1>
-<h2>Cylinder example: <code>reactive statement</code></h2>
-<Cylinder />
-<hr />
+<div class="chap">
+  <h1>chap3: svelte basics</h1>
 
-<h2>Select example: <code>event</code></h2>
-<Select {options} on:select={handleSelect} />
-{#if selected}
-  <div>You selected {selected}.</div>
-{/if}
-<hr />
+  <div class="example">
+    <h2>Cylinder example: <code>reactive statement</code></h2>
+    <Cylinder />
+  </div>
+
+  <div class="example">
+    <h2>Select example: <code>event</code></h2>
+    <Select {options} on:select={handleSelect} />
+    {#if selected}
+      <div>You selected {selected}.</div>
+    {/if}
+  </div>
+</div>

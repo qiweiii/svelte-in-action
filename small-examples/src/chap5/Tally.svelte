@@ -20,5 +20,4 @@
 {#each prices as price}
   <div>{price}</div>
 {/each}
-<hr>
 <label>Total {total}, Tax Rate {(taxRate * 100).toFixed(2)}%</label>
