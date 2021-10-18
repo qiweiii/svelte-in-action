@@ -22,6 +22,8 @@
   let colors = ["Red", "Green", "Blue"];
   let color = "";
   const handleSelect = (event) => (color = event.detail);
+  // ABC: context
+  import ABC from "./A.svelte";
 </script>
 
 <div class="chap">
@@ -81,6 +83,11 @@
     {#if color}
       <div>You clicked {color}.</div>
     {/if}
+  </div>
+
+  <div class="example">
+    <h2>ABC: <code>context</code></h2>
+    <ABC />
   </div>
 </div>
 
