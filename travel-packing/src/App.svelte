@@ -2,12 +2,16 @@
 	import Login from './Login.svelte';
   import Checklist from './Checklist.svelte';
 
-	export let name;
+  let page = Login;
 </script>
 
 <main>
 	<h1 class="hero">Travel Packing Checklist</h1>
-  <Checklist />
+  {#if page === Login}
+    <Login on:login={() => (page = Checklist)} />
+  {:else}
+    <Checklist on:logout={() => (page = Login)} />
+  {/if}
 </main>
 
 <style>

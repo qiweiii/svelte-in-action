@@ -1,12 +1,14 @@
 <script>
   import Category from './Category.svelte';
   import {getGuid, sortOnName} from './util';
- 
+  import {createEventDispatcher} from 'svelte';
+
   let categoryArray = [];
   let categories = {};
   let categoryName;
   let message = '';
   let show = 'all';
+  const dispatch = createEventDispatcher();
  
   $: categoryArray = sortOnName(Object.values(categories));
  
@@ -34,6 +36,28 @@
     }
     categories = categories;
   }
+
+  function deleteCategory(category) {
+    delete categories[category.id];
+    categories = categories;
+  }
+
+
+  // persist to localStorage
+  restore();
+ 
+  $: if (categories) persist();
+  
+  function persist() {
+    localStorage.setItem('travel-packing', JSON.stringify(categories));
+  }
+  
+  function restore() {
+    const text = localStorage.getItem('travel-packing');
+    if (text && text !== '{}') {
+      categories = JSON.parse(text);
+    }
+  }
 </script>
  
 <section>
@@ -44,7 +68,7 @@
         <input bind:value={categoryName}>
       </label>
       <button disabled={!categoryName}>Add Category</button>
-      <button class="logout-btn">
+      <button class="logout-btn" on:click={() => dispatch('logout')}>>
         Log Out
       </button>
     </form>
@@ -55,7 +79,7 @@
     </p>
  
     <div class="radios">
-      <label>Show</label>
+      <div>Show</div>
       <label>
         <input name="show" type="radio" value="all" bind:group={show}>
         All
@@ -75,7 +99,13 @@
 
   <div class="categories">
     {#each categoryArray as category (category.id)}
-      <Category bind:category {categories} {show} />
+      <Category 
+        {categories} 
+        {show} 
+        bind:category 
+        on:delete={() => deleteCategory(category)}
+        on:persist={persist}
+      />
     {/each}
   </div>
 </section>
