@@ -1,7 +1,7 @@
 <script>
-  import { createEventDispatcher } from "svelte";
-  import { dogStore } from "./stores";
-  import { getGuid } from "./util";
+  import { createEventDispatcher } from 'svelte';
+  import { dogStore } from './stores';
+  import { getGuid } from './util';
 
   const dispatch = createEventDispatcher();
   export let dog;
@@ -16,21 +16,21 @@
       dogMap[id] = { id, name, breed, size };
       return dogMap;
     });
-    dispatch("mode", "list");
+    dispatch('mode', 'list');
   }
 </script>
 
 <form on:submit|preventDefault={save}>
   <div>
     <label for="name">Name</label>
-    <input autofocus id="name" bind:value={name} />
+    <input id="name" bind:value={name} />
   </div>
   <div>
     <label for="breed">Breed</label>
     <input id="breed" bind:value={breed} />
   </div>
   <div>
-    <label>Size</label>
+    <div>Size</div>
     <span class="radios">
       <label>
         <input type="radio" value="small" bind:group={size} />
@@ -47,9 +47,8 @@
     </span>
   </div>
   <div>
-    <label />
-    <button disabled={!canSave}>{mode === "create" ? "Save" : "Update"}</button>
-    <button type="button" on:click={() => dispatch("mode", "list")}>
+    <button disabled={!canSave}>{mode === 'create' ? 'Save' : 'Update'}</button>
+    <button type="button" on:click={() => dispatch('mode', 'list')}>
       Cancel
     </button>
   </div>
@@ -70,7 +69,7 @@
     padding: 4px;
   }
 
-  input[type="radio"] {
+  input[type='radio'] {
     height: 16px;
   }
 
