@@ -4,6 +4,7 @@
   import Chap5 from './chap5/index.svelte';
   import Chap6 from './chap6/index.svelte';
   import Chap7 from './chap7/index.svelte';
+  import Chap8 from './chap8/index.svelte';
 </script>
 
 <main>
@@ -12,6 +13,7 @@
   <Chap5 />
   <Chap6 />
   <Chap7 />
+  <Chap8 />
 </main>
 
 <style>

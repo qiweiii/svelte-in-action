@@ -92,6 +92,7 @@ hr {
 }
 
 p {
+	width: max-content;
 	background-color: yellow;
 }
 
