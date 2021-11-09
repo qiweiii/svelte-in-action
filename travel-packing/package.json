@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public --no-clear"
+    "start": "sirv public --no-clear --single"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "dialog-polyfill": "^0.5.6",
+    "page": "^1.11.6",
     "sirv-cli": "^1.0.0",
     "uuid": "^8.3.2"
   }
