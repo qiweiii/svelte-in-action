@@ -1,18 +1,18 @@
 <script>
-  import Cylinder from "./Cylinder.svelte";
-  import Select from "./Select.svelte";
+  import Cylinder from './Cylinder.svelte';
+  import Select from './Select.svelte';
   const options = [
-    "",
-    "Red",
-    { label: "Green" },
-    { label: "Blue", value: "b" },
+    '',
+    'Red',
+    { label: 'Green' },
+    { label: 'Blue', value: 'b' },
   ];
   let selected;
   const handleSelect = (event) => (selected = event.detail);
 </script>
 
 <div class="chap">
-  <h1>chap3: svelte basics</h1>
+  <h1>Chap 3: Svelte basics</h1>
 
   <div class="example">
     <h2>Cylinder example: <code>reactive statement</code></h2>

@@ -2,7 +2,7 @@
 </script>
 
 <div class="chap">
-  <h1>chap9: Client side routing</h1>
+  <h1>Chap 9: Client side routing</h1>
 
   <div class="example">
     See examples in these repos:

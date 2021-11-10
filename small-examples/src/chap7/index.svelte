@@ -8,7 +8,7 @@
 </script>
 
 <div class="chap">
-  <h1>chap7: DOM interactions</h1>
+  <h1>Chap 7: DOM interactions</h1>
 
   <div class="example">
     <h2>HTML preview example</h2>

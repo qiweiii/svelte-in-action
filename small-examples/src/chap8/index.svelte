@@ -18,7 +18,7 @@
 </script>
 
 <div class="chap">
-  <h1>chap8: Lifecycle functions</h1>
+  <h1>Chap 8: Lifecycle functions</h1>
 
   <p>onMount to run code when a component is added to the DOM</p>
   <p>beforeUpdate to run code before every component update</p>

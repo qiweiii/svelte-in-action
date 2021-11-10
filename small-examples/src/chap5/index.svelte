@@ -1,10 +1,10 @@
 <script>
-  import StopLight from "./StopLight.svelte";
+  import StopLight from './StopLight.svelte';
   let go = false;
   // tally
-  import Tally from "./Tally.svelte";
+  import Tally from './Tally.svelte';
   // parent-child
-  import Parent from "./Parent.svelte";
+  import Parent from './Parent.svelte';
   let tally,
     taxRate = 0,
     grandTotal = 0;
@@ -13,21 +13,21 @@
     grandTotal = tally.getGrandTotal();
   }
   // color pick
-  import ColorPicker from "./ColorPicker.svelte";
-  let hex = "000000";
+  import ColorPicker from './ColorPicker.svelte';
+  let hex = '000000';
   // shipping label: slots
-  import ShippingLabel from "./ShippingLabel.svelte";
+  import ShippingLabel from './ShippingLabel.svelte';
   // buttons: basic events
-  import Buttons from "./Buttons.svelte";
-  let colors = ["Red", "Green", "Blue"];
-  let color = "";
+  import Buttons from './Buttons.svelte';
+  let colors = ['Red', 'Green', 'Blue'];
+  let color = '';
   const handleSelect = (event) => (color = event.detail);
   // ABC: context
-  import ABC from "./A.svelte";
+  import ABC from './A.svelte';
 </script>
 
 <div class="chap">
-  <h1>chap5: component communication</h1>
+  <h1>Chap 5: Component communication</h1>
 
   <div class="example">
     <h2>StopLight example: <code>props</code></h2>
@@ -43,7 +43,7 @@
     <button on:click={update}>Update</button>
     <div>
       Tax Rate = {(taxRate * 100).toFixed(2)}%; Grand Total = {grandTotal.toFixed(
-        2
+        2,
       )}
     </div>
   </div>
