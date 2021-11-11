@@ -16,18 +16,16 @@
       https://github.com/mvolkmann/svelte-and-sapper-in-action/tree/master/svelte-shop-page-routing
     </li>
 
-    <div>The basic idea is simple, look at the code directly to recap.</div>
-    <div>
-      Manual routing is very basic, it does not even change url in browser.
-    </div>
-    <div>
+    <p>The basic idea is simple, look at the code directly to recap.</p>
+    <p>Manual routing is very basic, it does not even change url in browser.</p>
+    <p>
       Hash routing changes the URL in the browser’s address bar changes, but
       only the hash part...
-    </div>
-    <div>
+    </p>
+    <p>
       The third example is to use `page.js` to do client side routing, which
       relies on the browser History API
-    </div>
-    <div>Of course, there are other libs to use for routing...</div>
+    </p>
+    <p>Of course, there are other libs to use for routing...</p>
   </div>
 </div>
