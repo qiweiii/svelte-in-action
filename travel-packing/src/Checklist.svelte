@@ -3,6 +3,7 @@
   import { getGuid, sortOnName } from './util';
   import { createEventDispatcher } from 'svelte';
   import Dialog from './Dialog.svelte';
+  import { flip } from 'svelte/animate';
 
   let dialog = null;
   let categoryArray = [];
@@ -29,6 +30,7 @@
     },
   };
   const dispatch = createEventDispatcher();
+  const options = { duration: 700 };
 
   $: categoryArray = sortOnName(Object.values(categories));
 
@@ -123,14 +125,16 @@
 
   <div class="categories">
     {#each categoryArray as category (category.id)}
-      <Category
-        {categories}
-        {show}
-        bind:category
-        on:delete={() => deleteCategory(category)}
-        on:persist={persist}
-        dnd={dragAndDrop}
-      />
+      <div class="wrapper" animate:flip={options}>
+        <Category
+          {categories}
+          {show}
+          bind:category
+          on:delete={() => deleteCategory(category)}
+          on:persist={persist}
+          dnd={dragAndDrop}
+        />
+      </div>
     {/each}
   </div>
 
@@ -187,5 +191,13 @@
 
     font-size: 24px;
     margin-top: 1em;
+  }
+
+  .animate {
+    display: inline-block;
+  }
+
+  .wrapper {
+    display: inline;
   }
 </style>

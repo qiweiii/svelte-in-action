@@ -17,14 +17,16 @@
     </li>
 
     <p>The basic idea is simple, look at the code directly to recap.</p>
-    <p>Manual routing is very basic, it does not even change url in browser.</p>
     <p>
-      Hash routing changes the URL in the browser’s address bar changes, but
-      only the hash part...
+      <mark>Manual routing</mark> is very basic, it does not even change url in browser.
     </p>
     <p>
-      The third example is to use `page.js` to do client side routing, which
-      relies on the browser History API
+      <mark>Hash routing</mark> changes the URL in the browser’s address bar changes,
+      but only the hash part...
+    </p>
+    <p>
+      The third example is to use <mark>`page.js`</mark> to do client side routing,
+      which relies on the browser History API
     </p>
     <p>Of course, there are other libs to use for routing...</p>
   </div>
