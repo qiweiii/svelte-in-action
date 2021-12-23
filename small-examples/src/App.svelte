@@ -8,6 +8,7 @@
   import Chap8 from './chap8/index.svelte';
   import Chap9 from './chap9/index.svelte';
   import Chap10 from './chap10/index.svelte';
+  import Chap11 from './chap11/index.svelte';
   import NavBar from './NavBar.svelte';
   import NotFound from './NotFound.svelte';
 
@@ -22,6 +23,7 @@
   page('/chap8', () => (component = Chap8));
   page('/chap9', () => (component = Chap9));
   page('/chap10', () => (component = Chap10));
+  page('/chap11', () => (component = Chap11));
   page('*', () => (component = NotFound));
   page.start();
 </script>

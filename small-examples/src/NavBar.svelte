@@ -10,6 +10,7 @@
   <a href="/chap8" class="nav-item">Chap 8: Lifecycle functions</a>
   <a href="/chap9" class="nav-item">Chap 9: Client side routing</a>
   <a href="/chap10" class="nav-item">Chap 10: Animation ⭐️</a>
+  <a href="/chap11" class="nav-item">Chap 11: Debugging</a>
 </nav>
 
 <style>
